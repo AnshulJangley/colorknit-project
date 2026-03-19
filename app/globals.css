@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'aos/dist/aos.css';
+
+:root {
+  /* Royal color gradients */
+  --gradient-brand:        linear-gradient(90deg, #6B1230 0%, #8B1A42 20%, #A8214F 52%, #8B1A42 80%, #6B1230 100%);
+  --gradient-hero-dark:    linear-gradient(160deg, rgba(42,10,30,0.82) 0%, rgba(8,15,38,0.78) 100%);
+  --gradient-hero-overlay: linear-gradient(to top, rgba(8,15,38,0.95) 0%, rgba(8,15,38,0.4) 50%, rgba(42,10,30,0.3) 100%);
+  --gradient-dark-luxury:  linear-gradient(146deg, #2A0A1E 0%, #080F26 100%);
+  --gradient-royal:        linear-gradient(135deg, #0D1635 0%, #2A0A1E 50%, #0D1635 100%);
+  --gradient-hero-pink:    linear-gradient(39deg, #F5E8EE 51.59%, rgba(245,232,238,0.15) 100%);
+  --gradient-gold-fade:    linear-gradient(90deg, #F5E6C8 2.38%, hsla(38,70%,93%,0) 100%);
+  --gradient-cream-ivory:  linear-gradient(180deg, #ffffff 0%, #F7F0E6 100%);
+  --gradient-announcement: linear-gradient(90deg, #6B1230, #A8214F, #6B1230);
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #6B1230;
+  color: white;
+}
+
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: #FDF8F0; }
+::-webkit-scrollbar-thumb  { background: linear-gradient(180deg, #6B1230, #A8214F); border-radius: 3px; }
+
+body {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  color: #0D1635;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ── Swiper overrides ── */
+.swiper-button-next,
+.swiper-button-prev { display: none !important; }
+
+.swiper-pagination-bullet         { background: #C9973A !important; opacity: 0.3; }
+.swiper-pagination-bullet-active  { opacity: 1 !important; width: 24px !important; border-radius: 4px !important; transition: width 0.3s ease; }
+
+/* ── Keen-slider dots ── */
+.keen-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #6B1230; opacity: 0.3;
+  cursor: pointer; transition: all 0.3s ease;
+}
+.keen-dot.active { width: 24px; border-radius: 4px; opacity: 1; }
+
+/* ── Nav link hover animation ── */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: ''; position: absolute; bottom: -3px; left: 0;
+  width: 0; height: 2px;
+  background: var(--gradient-brand);
+  border-radius: 2px; transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+/* ── Button shimmer ── */
+.btn-shimmer { position: relative; overflow: hidden; }
+.btn-shimmer::before {
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+.btn-shimmer:hover::before { left: 150%; }
+
+/* ── Section heading line ── */
+.heading-line {
+  width: 56px; height: 3px;
+  background: var(--gradient-brand);
+  border-radius: 2px; margin: 10px auto 0;
+}
+
+/* ── Accordion ── */
+[data-state='open'] .accordion-chevron { transform: rotate(180deg); }
+.accordion-chevron { transition: transform 0.3s ease; }
+
+/* ── AOS ── */
+[data-aos]           { pointer-events: none; }
+[data-aos].aos-animate { pointer-events: auto; }
+
+/* ── Announcement bar animation ── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-inner { animation: marquee 28s linear infinite; }
+
+/* ── Hero video overlay pattern ── */
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2.5l4 3.5-4 3.5zm0-11V7H0V5h20V2.5L24 6l-4 3.5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ── Prose (blog) ── */
+.prose h2 { font-family: var(--font-playfair); color: #0D1635; font-size: 28px; font-weight: 700; margin: 2rem 0 1rem; }
+.prose h3 { font-family: var(--font-poppins); color: #0D1635; font-size: 20px; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+.prose p  { color: #7A8090; line-height: 1.85; margin-bottom: 1.2rem; }
+.prose a  { color: #6B1230; text-decoration: underline; }
+
+@layer utilities {
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(90deg, #C9973A, #E0B855, #C9973A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-gradient-brand-css { background: var(--gradient-brand); }
+  .flex-center { display: flex; align-items: center; justify-content: center; }
+}
