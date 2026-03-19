@@ -62,6 +62,7 @@ export default function Hero() {
             playsInline
             onEnded={handleVideoEnd}
             poster="/images/hero/poster.jpg"
+            preload="auto"
           >
             <source src={VIDEOS[vidIdx]} type="video/mp4" />
           </video>
