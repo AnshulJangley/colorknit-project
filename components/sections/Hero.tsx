@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, CheckCircle2 } from 'lucide-react'
+import Image from 'next/image'
 
 const VIDEOS = [
   '/videos/wedding-night.mp4',
@@ -10,10 +11,12 @@ const VIDEOS = [
   '/videos/decor.mp4',
 ]
 
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
 const fadeUp = (delay: number) => ({
-  initial:    { opacity: 0, y: 32 },
+  initial:    { opacity: 0, y: isMobile ? 0 : 32 },
   animate:    { opacity: 1, y: 0 },
-  transition: { duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] as [number,number,number,number] },
+  transition: { duration: isMobile ? 0.3 : 0.9, delay: isMobile ? 0 : delay, ease: [0.22, 1, 0.36, 1] as [number,number,number,number] },
 })
 
 export default function Hero() {
@@ -39,35 +42,49 @@ export default function Hero() {
       style={{ height: 'calc(100vh - 70px)', minHeight: '580px', background: '#0D1635' }}
     >
 
-      {/* ── Preload next video silently ── */}
-      <video key={`pre-${nextIdx}`} preload="auto" muted playsInline className="hidden">
-        <source src={VIDEOS[nextIdx]} type="video/mp4" />
-      </video>
+      {/* ── Mobile: static poster image (no video for performance) ── */}
+      <div className="absolute inset-0 md:hidden">
+        <Image
+          src="/images/hero/poster.jpg"
+          alt="ColorKnit Events wedding decor"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
 
-      {/* ── Background Video ── */}
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={vidIdx}
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.4, ease: 'easeInOut' }}
-        >
-          <video
-            ref={videoRef}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            playsInline
-            onEnded={handleVideoEnd}
-            poster="/images/hero/poster.jpg"
-            preload="auto"
+      {/* ── Desktop: video carousel ── */}
+      <div className="hidden md:block absolute inset-0">
+        {/* Preload next video silently */}
+        <video key={`pre-${nextIdx}`} preload="metadata" muted playsInline className="hidden">
+          <source src={VIDEOS[nextIdx]} type="video/mp4" />
+        </video>
+
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={vidIdx}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.4, ease: 'easeInOut' }}
           >
-            <source src={VIDEOS[vidIdx]} type="video/mp4" />
-          </video>
-        </motion.div>
-      </AnimatePresence>
+            <video
+              ref={videoRef}
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleVideoEnd}
+              poster="/images/hero/poster.jpg"
+              preload="auto"
+            >
+              <source src={VIDEOS[vidIdx]} type="video/mp4" />
+            </video>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       {/* ── Dark gradient overlay ── */}
       <div className="absolute inset-0 z-10" style={{ background: 'var(--gradient-hero-overlay)' }} />
@@ -131,8 +148,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* ── Video dots ── */}
-      <div className="absolute bottom-6 right-6 z-20 flex items-center gap-2">
+      {/* ── Video dots (desktop only) ── */}
+      <div className="hidden md:flex absolute bottom-6 right-6 z-20 items-center gap-2">
         {VIDEOS.map((_, i) => (
           <button
             key={i}
