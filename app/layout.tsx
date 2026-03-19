@@ -49,6 +49,10 @@ export const metadata: Metadata = {
     description: '500+ weddings. 12 years of excellence. Your dream wedding, crafted with love.',
     images: ['/images/hero/poster.jpg'],
   },
+  icons: {
+    icon: '/images/colorknit-logo-alt.jpg',
+    apple: '/images/colorknit-logo-alt.jpg',
+  },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large', 'max-video-preview': -1 } },
   alternates: { canonical: 'https://colorknit.in' },
   verification: {

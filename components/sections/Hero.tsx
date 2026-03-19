@@ -96,16 +96,10 @@ export default function Hero() {
         {/* Main heading */}
         <motion.h1
           {...fadeUp(0.25)}
-          className="font-display font-bold text-white leading-[1.08] mb-2"
+          className="font-display font-bold text-white leading-[1.08]"
           style={{ fontSize: 'clamp(40px, 6.5vw, 80px)', textShadow: '0 2px 24px rgba(0,0,0,0.4)' }}
         >
-          Your Dream Wedding,
-        </motion.h1>
-        <motion.h1
-          {...fadeUp(0.35)}
-          className="font-display font-bold leading-[1.08]"
-          style={{ fontSize: 'clamp(40px, 6.5vw, 80px)', textShadow: '0 2px 24px rgba(0,0,0,0.4)' }}
-        >
+          Your Dream Wedding,{' '}
           <span className="text-gradient-gold">Crafted With Love</span>
         </motion.h1>
 

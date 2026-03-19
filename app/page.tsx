@@ -11,7 +11,7 @@ import BlogPreview from '@/components/sections/BlogPreview'
 
 export const metadata: Metadata = {
   title: 'ColorKnit Events | Best Wedding Planner in Pune',
-  description: 'ColorKnit Events — Pune\'s most trusted wedding planner since 2012. 500+ weddings, full planning, stunning decor, catering & photography. Book a free consultation in Baner, Pune.',
+  description: "Pune's most trusted wedding planner since 2012. 500+ weddings, full planning, decor, catering & photography. Free consultation in Baner, Pune.",
   alternates: { canonical: 'https://colorknit.in' },
 }
 
