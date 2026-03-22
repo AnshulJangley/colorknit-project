@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'About Us | ColorKnit Events — Wedding Planners in Pune Since 2012',
-  description: 'Meet the ColorKnit Events team — passionate wedding planners in Pune with 12+ years of experience. We\'ve crafted 500+ weddings across Maharashtra & India. Know our story.',
+  title: 'About Us | ColorKnit Events — Wedding & Event Planners in Pune',
+  description: 'ColorKnit Events started as a full-service event management company and found its deepest calling in weddings. Based in Pune, we craft unforgettable celebrations with passion and precision.',
   alternates: { canonical: 'https://colorknit.in/about' },
   openGraph: {
     url: 'https://colorknit.in/about',
-    title: 'About ColorKnit Events | Pune\'s Trusted Wedding Planners',
-    description: '12+ years, 500+ weddings, a team that treats every celebration as their own. Based in Baner, Pune.',
+    title: 'About ColorKnit Events | Wedding & Event Planners in Pune',
+    description: 'From corporate events to dream weddings — ColorKnit brings the same excellence and heart to every celebration. Based in Baner, Pune.',
   },
 }
 import { Heart, Award, Users, Sparkles } from 'lucide-react'
