@@ -113,7 +113,7 @@ export default function AboutPage() {
                 We realized we weren&apos;t just planning events — we were holding people&apos;s most precious memories in our hands. Weddings became our deepest passion, the work we pour our whole hearts into. Today, weddings are at the very soul of ColorKnit — and every couple we serve feels exactly that.
               </p>
               <blockquote className="border-l-4 border-brand-rose pl-6 italic font-display text-[20px] text-brand-dark leading-snug">
-                &ldquo;We have managed countless events — but nothing moves us like two people saying &lsquo;I do.&rsquo;&rdquo;
+                &ldquo;Every detail we design, every moment we orchestrate — it all exists for one purpose: to make your wedding absolutely unforgettable.&rdquo;
                 <footer className="mt-3 font-fine text-[13px] text-brand-neutral not-italic">— The ColorKnit Team</footer>
               </blockquote>
             </div>
