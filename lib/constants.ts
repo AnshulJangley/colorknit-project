@@ -195,10 +195,10 @@ export const GALLERY_IMAGES = [
 ]
 
 export const TEAM = [
-  { name: 'Priya Kulkarni',  role: 'Founder & Lead Planner',     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80', bio: '12+ years crafting luxury weddings across Maharashtra.' },
-  { name: 'Rohan Mehta',     role: 'Creative Director',           avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80', bio: 'Award-winning designer with a flair for floral artistry.' },
-  { name: 'Ananya Singh',    role: 'Vendor Relations Head',       avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80', bio: 'Manages our 50+ vetted vendor network across India.' },
-  { name: 'Kabir Deshmukh',  role: 'Destination Wedding Expert',  avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80', bio: 'Specializes in destination weddings from Goa to Jaipur.' },
+  { name: 'xxxx',  role: 'xxxx',  avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80', bio: 'xxxx' },
+  { name: 'xxxx',  role: 'xxxx',  avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80', bio: 'xxxx' },
+  { name: 'xxxx',  role: 'xxxx',  avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80', bio: 'xxxx' },
+  { name: 'xxxx',  role: 'xxxx',  avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80', bio: 'xxxx' },
 ]
 
 export const FAQ = [

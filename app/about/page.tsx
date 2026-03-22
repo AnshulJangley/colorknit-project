@@ -22,15 +22,6 @@ const values = [
   { icon: Sparkles, title: 'Your Vision, Amplified', desc: 'We don\'t impose our aesthetic. We take your dreams and amplify them into something even more beautiful than you imagined.' },
 ]
 
-const milestones = [
-  { year: '2012', title: 'ColorKnit Founded',        desc: 'Started with a small team of 3 in Pune with a big dream.' },
-  { year: '2015', title: 'First 100 Weddings',       desc: 'Reached our 100th wedding milestone. Expanded our vendor network.' },
-  { year: '2018', title: 'Destination Weddings',     desc: 'Launched destination wedding services across India.' },
-  { year: '2020', title: 'Virtual Planning Launched', desc: 'Adapted to serve couples through the pandemic with virtual consultations.' },
-  { year: '2022', title: '400+ Weddings Milestone',  desc: 'Celebrated 400 love stories with a team of 15 dedicated planners.' },
-  { year: '2024', title: 'Pune\'s #1 Planner',       desc: 'Rated Pune\'s most trusted wedding planners by WeddingWire India.' },
-]
-
 const aboutSchemas = [
   // BreadcrumbList
   {
@@ -111,16 +102,19 @@ export default function AboutPage() {
             </div>
             {/* Text */}
             <div data-aos="fade-up" data-aos-delay="150">
-              <SectionHeading eyebrow="Our Story" title="Born From a Passion" titleLine2="For Love Stories" align="left" />
+              <SectionHeading eyebrow="Our Story" title="From Grand Events" titleLine2="To Greatest Love Stories" align="left" />
               <p className="font-body text-[16px] text-brand-neutral leading-[1.75] mb-4">
-                ColorKnit was born in 2012 when our founder Priya Kulkarni planned her sister&apos;s wedding and realized how fragmented and stressful the process was. She set out to create a one-stop wedding experience — warm, professional, and completely personal.
+                ColorKnit began as a full-service event management company — orchestrating corporate galas, product launches, cultural festivals, and grand celebrations across Pune and Maharashtra. We were skilled at transforming spaces, managing logistics, and creating experiences that people remembered.
+              </p>
+              <p className="font-body text-[16px] text-brand-neutral leading-[1.75] mb-4">
+                But somewhere between the stage lights and the spreadsheets, something shifted. Every time a wedding came our way, we felt something different — something deeper. The nervous excitement in a groom&apos;s eyes. The quiet tears of a mother watching her daughter walk to the mandap. The unscripted, irreplaceable moments that no corporate event could ever hold.
               </p>
               <p className="font-body text-[16px] text-brand-neutral leading-[1.75] mb-6">
-                Today, with over 500 weddings and a team of 15 passionate planners, ColorKnit is Pune&apos;s most trusted name in wedding management. But our heart remains the same — we treat every couple&apos;s wedding as if it were our own.
+                We realized we weren&apos;t just planning events — we were holding people&apos;s most precious memories in our hands. So we made a choice: set down the corporate briefs and devote ourselves entirely to love stories. Today, ColorKnit is a wedding company — heart, soul, and every last petal.
               </p>
               <blockquote className="border-l-4 border-brand-rose pl-6 italic font-display text-[20px] text-brand-dark leading-snug">
-                &ldquo;Every love story is beautiful. Our job is to make yours unforgettable.&rdquo;
-                <footer className="mt-3 font-fine text-[13px] text-brand-neutral not-italic">— Priya Kulkarni, Founder</footer>
+                &ldquo;We&apos;ve planned a thousand events. Nothing comes close to the feeling of a wedding done right.&rdquo;
+                <footer className="mt-3 font-fine text-[13px] text-brand-neutral not-italic">— The ColorKnit Team</footer>
               </blockquote>
             </div>
           </div>
@@ -139,53 +133,6 @@ export default function AboutPage() {
                 </div>
                 <h3 className="font-body text-[22px] font-semibold text-brand-dark mb-3">{title}</h3>
                 <p className="font-fine text-[15px] text-brand-neutral leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="bg-white py-24">
-        <div className="max-w-[900px] mx-auto px-4 md:px-8">
-          <SectionHeading eyebrow="Our Journey" title="12 Years of" titleLine2="Love Stories" />
-          <div className="relative">
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-brand opacity-20 -translate-x-px" />
-            {milestones.map((m, i) => (
-              <div
-                key={i}
-                className={`flex gap-6 md:gap-0 items-start mb-10 relative ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                data-aos="fade-up"
-                data-aos-delay={i * 80}
-              >
-                <div className={`hidden md:block flex-1 ${i % 2 === 0 ? 'text-right pr-10' : 'text-left pl-10'}`}>
-                  {i % 2 === 0 ? (
-                    <>
-                      <h3 className="font-body text-[18px] font-semibold text-brand-dark">{m.title}</h3>
-                      <p className="font-fine text-[14px] text-brand-neutral mt-1">{m.desc}</p>
-                    </>
-                  ) : (
-                    <p className="font-display text-[28px] font-bold text-gradient-brand">{m.year}</p>
-                  )}
-                </div>
-                <div className="relative z-10 w-12 h-12 rounded-full bg-gradient-brand flex-center text-white font-body text-[13px] font-bold flex-shrink-0 shadow-brand">
-                  {m.year.slice(-2)}
-                </div>
-                <div className={`flex-1 md:${i % 2 === 0 ? 'pl-10' : 'pr-10'} pl-6 md:pl-0`}>
-                  {i % 2 === 0 ? (
-                    <p className="hidden md:block font-display text-[28px] font-bold text-gradient-brand">{m.year}</p>
-                  ) : (
-                    <>
-                      <h3 className="font-body text-[18px] font-semibold text-brand-dark">{m.title}</h3>
-                      <p className="font-fine text-[14px] text-brand-neutral mt-1">{m.desc}</p>
-                    </>
-                  )}
-                  <div className="md:hidden">
-                    <p className="font-display text-[22px] font-bold text-gradient-brand">{m.year}</p>
-                    <h3 className="font-body text-[17px] font-semibold text-brand-dark">{m.title}</h3>
-                    <p className="font-fine text-[14px] text-brand-neutral mt-1">{m.desc}</p>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
