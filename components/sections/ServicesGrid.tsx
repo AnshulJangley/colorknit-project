@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Heart, Flower2, UtensilsCrossed, Camera, MapPin, Plane, ArrowRight } from 'lucide-react'
+import { Heart, Flower2, UtensilsCrossed, Camera, MapPin, ClipboardList, Mail, Music, ArrowRight } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
 import { SERVICES } from '@/lib/constants'
 
 const iconMap: Record<string, React.ElementType> = {
-  Heart, Flower2, UtensilsCrossed, Camera, MapPin, Plane,
+  Heart, Flower2, UtensilsCrossed, Camera, MapPin, ClipboardList, Mail, Music,
 }
 
 export default function ServicesGrid() {

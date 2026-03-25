@@ -90,7 +90,7 @@ export default function Hero() {
         >
           <div className="h-px w-12 bg-gradient-to-r from-transparent to-brand-gold" />
           <span className="font-fine text-[11px] uppercase tracking-[0.25em] text-brand-goldLight">
-            ✦ &nbsp;Pune&apos;s Most Trusted Wedding Planners&nbsp; ✦
+            ✦ &nbsp;Most Trusted Wedding Planners&nbsp; ✦
           </span>
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-brand-gold" />
         </motion.div>

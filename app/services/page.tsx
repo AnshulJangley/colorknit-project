@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import { Heart, Flower2, UtensilsCrossed, Camera, MapPin, Plane, ArrowRight, Check, ChevronDown } from 'lucide-react'
+import { Heart, Flower2, UtensilsCrossed, Camera, MapPin, ClipboardList, Mail, Music, ArrowRight, Check, ChevronDown } from 'lucide-react'
 import * as Accordion from '@radix-ui/react-accordion'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
@@ -10,7 +10,7 @@ import { SERVICES, PACKAGES, FAQ } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
 const iconMap: Record<string, React.ElementType> = {
-  Heart, Flower2, UtensilsCrossed, Camera, MapPin, Plane,
+  Heart, Flower2, UtensilsCrossed, Camera, MapPin, ClipboardList, Mail, Music,
 }
 
 const categories = ['All', 'Planning', 'Decor', 'Catering', 'Photography', 'Destination', 'Honeymoon']
