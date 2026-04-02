@@ -11,10 +11,9 @@ export const metadata: Metadata = {
     description: 'From corporate events to dream weddings — ColorKnit brings the same excellence and heart to every celebration. Based in Baner, Pune.',
   },
 }
-import { Heart, Award, Users, Sparkles } from 'lucide-react'
+import { Heart, Award, Sparkles } from 'lucide-react'
 import SectionHeading from '@/components/ui/SectionHeading'
 import CTABanner from '@/components/sections/CTABanner'
-import { TEAM } from '@/lib/constants'
 
 const values = [
   { icon: Heart,    title: 'Love in Every Detail',  desc: 'We pour genuine care into every element of your wedding. For us, it\'s never just a job — it\'s someone\'s most important day.' },
@@ -23,7 +22,6 @@ const values = [
 ]
 
 const aboutSchemas = [
-  // BreadcrumbList
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -32,7 +30,6 @@ const aboutSchemas = [
       { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://colorknit.in/about' },
     ],
   },
-  // Person schema for founder — AEO: AI engines understand who runs this business
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -43,7 +40,6 @@ const aboutSchemas = [
     knowsAbout: ['Wedding Planning', 'Event Management', 'Wedding Decor', 'Destination Weddings'],
     url: 'https://colorknit.in/about',
   },
-  // AboutPage speakable — AEO: marks content for AI/voice reading
   {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
@@ -69,6 +65,7 @@ export default function AboutPage() {
       {aboutSchemas.map((s, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
       ))}
+
       {/* Hero */}
       <div className="relative h-[340px] overflow-hidden">
         <Image src="/images/gallery/9baa9fabed9356f3b6e4efefcffbb2c2.jpg" alt="ColorKnit Events — wedding ceremony with couple at mandap in Pune" fill sizes="100vw" className="object-cover" priority />
@@ -133,25 +130,6 @@ export default function AboutPage() {
                 </div>
                 <h3 className="font-body text-[22px] font-semibold text-brand-dark mb-3">{title}</h3>
                 <p className="font-fine text-[15px] text-brand-neutral leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="bg-brand-cream py-24">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-8 lg:px-16">
-          <SectionHeading eyebrow="The People Behind the Magic" title="Meet Our" titleLine2="Team" subtitle="A family of passionate planners, creative directors, and coordination experts." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-            {TEAM.map((member, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-card text-center hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay={i * 100}>
-                <div className="relative w-28 h-28 rounded-full overflow-hidden ring-4 ring-brand-goldPale mx-auto">
-                  <Image src={member.avatar} alt={member.name} fill sizes="112px" className="object-cover" />
-                </div>
-                <h3 className="font-body text-[18px] font-semibold text-brand-dark mt-4">{member.name}</h3>
-                <p className="font-fine text-[12px] text-brand-rose uppercase tracking-wider mt-1">{member.role}</p>
-                <p className="font-fine text-[13px] text-brand-neutral mt-2 leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>
