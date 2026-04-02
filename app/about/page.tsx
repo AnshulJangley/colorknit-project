@@ -36,7 +36,7 @@ const aboutSchemas = [
     name: 'Priya Kulkarni',
     jobTitle: 'Founder & Lead Wedding Planner',
     worksFor: { '@type': 'Organization', name: 'ColorKnit Events', url: 'https://colorknit.in' },
-    description: 'Priya Kulkarni is the founder of ColorKnit Events, Pune\'s most trusted wedding planner since 2012. With 12+ years of experience, she has crafted over 500 weddings across Maharashtra and India.',
+    description: 'Mudraksh Jangley is the founder of ColorKnit Events, Pune\'s most trusted wedding planner since 2012. With 12+ years of experience, she has crafted over 500 weddings across Maharashtra and India.',
     knowsAbout: ['Wedding Planning', 'Event Management', 'Wedding Decor', 'Destination Weddings'],
     url: 'https://colorknit.in/about',
   },
@@ -54,7 +54,7 @@ const aboutSchemas = [
       name: 'ColorKnit Events',
       foundingDate: '2012',
       foundingLocation: { '@type': 'Place', name: 'Pune, Maharashtra, India' },
-      description: 'ColorKnit Events was founded in 2012 by Priya Kulkarni in Pune, Maharashtra. The company specializes in full wedding planning, decor, catering coordination, photography, and destination weddings across India.',
+      description: 'ColorKnit Events was founded in Pune, Maharashtra. The company specializes in full wedding planning, decor, catering coordination, photography, and destination weddings across India.',
     },
   },
 ]
