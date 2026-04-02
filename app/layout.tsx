@@ -50,10 +50,21 @@ export const metadata: Metadata = {
     description: '500+ weddings. 12 years of excellence. Your dream wedding, crafted with love.',
     images: ['/images/hero/poster.jpg'],
   },
+
+  // ✅ UPDATED ICONS SECTION
   icons: {
-    icon: '/images/colorknit-logo-alt.jpg',
-    apple: '/images/colorknit-logo-alt.jpg',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: '/apple-touch-icon.png',
+    other: [
+      { rel: 'android-chrome-192x192', url: '/android-chrome-192x192.png' },
+      { rel: 'android-chrome-512x512', url: '/android-chrome-512x512.png' },
+    ],
   },
+
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large', 'max-video-preview': -1 } },
   alternates: { canonical: 'https://colorknit.in' },
   verification: {
@@ -91,7 +102,7 @@ const organizationSchema = {
   },
   foundingDate: '2012',
   numberOfEmployees: { '@type': 'QuantitativeValue', value: 15 },
-  description: "ColorKnit Events is Pune's most trusted wedding planning company, founded in 2012 by Priya Kulkarni. Specializing in full wedding planning, decor, catering, photography and destination weddings across India.",
+  description: "ColorKnit Events is Pune's most trusted wedding planning company, founded in 2012 by Mudraksh Jangley. Specializing in full wedding planning, decor, catering, photography and destination weddings across India.",
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Flat No. 303, 3rd Floor, Fortune House, Baner - Pashan Link Rd',
@@ -159,14 +170,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable} ${dmSans.variable}`}>
       <head>
-        {/* JSON-LD Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
-        {/* Preload hero poster for LCP */}
         <link rel="preload" as="image" href="/images/hero/poster.jpg" fetchPriority="high" />
-        {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>
       <body>
