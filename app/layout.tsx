@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large', 'max-video-preview': -1 } },
   alternates: { canonical: 'https://colorknit.in' },
   verification: {
-    google: 'add-your-google-search-console-verification-code-here',
+    google: '<meta name="google-site-verification" content="fPZt-Po1tkKO0a4tAYl4Rk9l7OvRjq7Z0gGUCqkr2Q4" />',
   },
 }
 
